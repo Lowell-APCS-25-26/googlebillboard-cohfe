@@ -17,15 +17,23 @@ public class GoogleBillboard {
         return true;
     }
     public long firstPrimeNumberIn(String n) {
-        Long firstPrime;
-        for(int i = 0; i < n.length()-2; i++){
-            firstPrime = Long.parseLong(n.substring(i,i+2));
-            for (int k = 2; k <=Math.sqrt(firstPrime); k++)
-            {
-                if (firstPrime % k != 0) 
+        for(int i = 0; i <= n.length()-2; i++){
+            long firstPrime = Long.parseLong(n.substring(i,i+2));
+            boolean isPrime = true;
+
+            if(firstPrime < 2) isPrime = false;
+
+            for(int k = 2; k <= Math.sqrt(firstPrime); k++){
+                if(firstPrime % k == 0){
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if(isPrime){
                 return firstPrime;
             }
-  }
+        }
         return -1;
     }
 }
