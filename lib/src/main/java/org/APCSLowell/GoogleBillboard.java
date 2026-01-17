@@ -12,13 +12,13 @@ public class GoogleBillboard {
         for (int i = 2; i <=Math.sqrt(n); i++)
         {
             if (n % i == 0) 
-            return false;
+                return false;
         }
         return true;
     }
     public long firstPrimeNumberIn(String n) {
-        for(int i = 0; i <= n.length()-2; i++){
-            long firstPrime = Long.parseLong(n.substring(i,i+2));
+        for(int i = 0; i <= n.length()-10; i++){
+            long firstPrime = Long.parseLong(n.substring(i,i+10));
             boolean isPrime = true;
 
             if(firstPrime < 2) isPrime = false;
